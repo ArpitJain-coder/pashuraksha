@@ -46,15 +46,15 @@ function scene(sky, ground, shapes){
 }
 
 const IMG = {
-  farmer:  '/images/farmer.png',
-  vet:     '/images/vet.png',
-  officer: '/images/officer.png',
-  cow:     '/images/cow_lakshmi.png',
-  cow2:    '/images/cow_gir.png',
-  cow3:    '/images/cow_lakshmi.png',
-  buffalo: '/images/buffalo.png',
-  calf:    '/images/calf.png',
-  goat:    '/images/calf.png',
+  farmer:  'images/farmer.png',
+  vet:     'images/vet.png',
+  officer: 'images/officer.png',
+  cow:     'images/cow_lakshmi.png',
+  cow2:    'images/cow_gir.png',
+  cow3:    'images/cow_lakshmi.png',
+  buffalo: 'images/buffalo.png',
+  calf:    'images/calf.png',
+  goat:    'images/calf.png',
   /* clinical close-ups, abstracted */
   mouth:   scene('#E6D2C8','#C9A899', '<ellipse cx="60" cy="46" rx="34" ry="22" fill="#A8776A"/><ellipse cx="60" cy="46" rx="26" ry="15" fill="#8E5D52"/><circle cx="49" cy="42" r="4" fill="#F2E4DC"/><circle cx="66" cy="50" r="3.4" fill="#F2E4DC"/><circle cx="72" cy="41" r="3" fill="#F2E4DC"/>'),
   hoof:    scene('#DED5C6','#A89684', '<path d="M52 28c-5 12-6 26-3 40 1.6 6 8 6 9.6 0 3-13 2.6-28-1.6-40-1-3.4-4-3.4-5 0z" fill="#4A4038"/><path d="M66 28c-5 12-6 26-3 40 1.6 6 8 6 9.6 0 3-13 2.6-28-1.6-40-1-3.4-4-3.4-5 0z" fill="#4A4038"/>'),

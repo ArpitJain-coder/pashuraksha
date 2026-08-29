@@ -140,14 +140,14 @@ SC['f-splash'] = () => ({ light:true, chrome:false, html:`
     display:flex;flex-direction:column;align-items:center;justify-content:space-between;color:#fff;
     padding:60px 24px 44px;text-align:center;position:relative;overflow:hidden">
     <div style="position:absolute;inset:0;opacity:.25;mix-blend-mode:overlay">
-      <img src="/images/onboard_3.png" style="width:100%;height:100%;object-fit:cover" alt="">
+      <img src="images/onboard_3.png" style="width:100%;height:100%;object-fit:cover" alt="">
     </div>
     <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;margin-top:24px">
       <div style="width:100px;height:100px;border-radius:28px;background:rgba(255,255,255,.14);
         backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.25);
         display:grid;place-items:center;box-shadow:0 12px 32px rgba(0,0,0,.3);
         animation:pop 700ms var(--ease-flow)">
-        <img src="/images/cow_lakshmi.png" style="width:84px;height:84px;border-radius:22px;object-fit:cover" alt="PashuSetu">
+        <img src="images/cow_lakshmi.png" style="width:84px;height:84px;border-radius:22px;object-fit:cover" alt="PashuSetu">
       </div>
       <div style="font-size:38px;font-weight:700;letter-spacing:-.035em;margin-top:20px;text-shadow:0 2px 8px rgba(0,0,0,.3)">PashuSetu</div>
       <div style="font-size:15px;color:rgba(255,255,255,.88);margin-top:8px;line-height:1.55;max-width:280px;font-weight:500">
@@ -165,7 +165,7 @@ SC['f-lang'] = () => ({ chrome:false, html:`
     ${topbar({ back:true })}
     <div class="pad">
       <div style="width:100%;height:140px;border-radius:var(--r-md);overflow:hidden;margin-bottom:18px;position:relative;box-shadow:var(--e1)">
-        <img src="/images/onboard_1.png" style="width:100%;height:100%;object-fit:cover" alt="">
+        <img src="images/onboard_1.png" style="width:100%;height:100%;object-fit:cover" alt="">
         <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 20%,rgba(0,0,0,.65) 100%)"></div>
         <div style="position:absolute;bottom:12px;left:14px;right:14px;color:#fff;font-weight:700;font-size:16px;letter-spacing:-.01em">
           आपली भाषा निवडा · Language
@@ -185,11 +185,11 @@ SC['f-lang'] = () => ({ chrome:false, html:`
   <div class="footer"><button class="btn btn-p" data-go="f-onboard">${t('cont')}</button></div>`});
 
 const ONB = [
-  { img:'/images/onboard_1.png', t:'You notice it first',
+  { img:'images/onboard_1.png', t:'You notice it first',
     d:'You look at your animals several times a day. Nobody sees a change sooner than you do. This turns what you noticed into help, in about a minute.' },
-  { img:'/images/onboard_2.png', t:'Know whether it can wait',
+  { img:'images/onboard_2.png', t:'Know whether it can wait',
     d:'Tell us what you saw. We tell you what to do in the next two hours, and whether this needs a veterinarian today or can wait.' },
-  { img:'/images/onboard_3.png', t:'One report protects the village',
+  { img:'images/onboard_3.png', t:'One report protects the village',
     d:'Reports from nearby farms are counted together, never by name. That is how an illness gets caught while it is still in three sheds instead of thirty.' }
 ];
 SC['f-onboard'] = () => { const o = ONB[S.onboardIdx]; return { chrome:false, html:`
@@ -483,7 +483,7 @@ SC['f-animal'] = () => {
    ============================================================ */
 SC['f-add-animal'] = () => {
   const defaultTag = `274 8891 00` + String(40 + DB.animals.length).padStart(2, '0');
-  if(!S.addAnimalState) S.addAnimalState = { species:'Cattle', breed:'HF Cross', img:'/images/cow_lakshmi.png' };
+  if(!S.addAnimalState) S.addAnimalState = { species:'Cattle', breed:'HF Cross', img:'images/cow_lakshmi.png' };
   
   return { chrome: false, html: `
   <div class="body">
@@ -520,10 +520,10 @@ SC['f-add-animal'] = () => {
       <div class="sec-t" style="margin-top:14px">Select Photo / Avatar</div>
       <div class="row" style="gap:10px;overflow-x:auto;padding-bottom:6px">
         ${[
-          ['cow', '/images/cow_lakshmi.png', t('cattle')],
-          ['cow2', '/images/cow_gir.png', 'Gir'],
-          ['buffalo', '/images/buffalo.png', t('buffalo')],
-          ['calf', '/images/calf.png', t('goat')]
+          ['cow', 'images/cow_lakshmi.png', t('cattle')],
+          ['cow2', 'images/cow_gir.png', 'Gir'],
+          ['buffalo', 'images/buffalo.png', t('buffalo')],
+          ['calf', 'images/calf.png', t('goat')]
         ].map(([k, imgPath, lbl]) => `
           <button class="pk ${S.addAnimalState.img===imgPath?'on':''}" data-act="addimg" data-v="${imgPath}" style="flex-direction:column;align-items:center;padding:10px;width:80px;flex-shrink:0">
             <img src="${imgPath}" style="width:48px;height:48px;border-radius:12px;object-fit:cover">

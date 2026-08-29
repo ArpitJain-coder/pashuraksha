@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pashusetu-v1';
+const CACHE_NAME = 'pashusetu-v2';
 const STATIC_ASSETS = [
   '/',
   '/index.html',
@@ -17,14 +17,32 @@ const STATIC_ASSETS = [
   '/images/onboard_1.png',
   '/images/onboard_2.png',
   '/images/onboard_3.png',
-  '/images/vet.png'
+  '/images/vet.png',
+  'index.html',
+  'styles.css',
+  'app.js',
+  'data.js',
+  'manifest.webmanifest',
+  'icons/icon-192.png',
+  'icons/icon-512.png',
+  'images/buffalo.png',
+  'images/calf.png',
+  'images/cow_gir.png',
+  'images/cow_lakshmi.png',
+  'images/farmer.png',
+  'images/officer.png',
+  'images/onboard_1.png',
+  'images/onboard_2.png',
+  'images/onboard_3.png',
+  'images/vet.png'
 ];
 
 self.addEventListener('install', (event) => {
+  self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(STATIC_ASSETS);
-    }).then(() => self.skipWaiting())
+      return cache.addAll(STATIC_ASSETS).catch(() => {});
+    })
   );
 });
 
@@ -64,8 +82,8 @@ self.addEventListener('fetch', (event) => {
         }
         return networkResponse;
       }).catch(() => {
-        if (event.request.headers.get('accept').includes('text/html')) {
-          return caches.match('/index.html') || caches.match('/');
+        if (event.request.headers.get('accept') && event.request.headers.get('accept').includes('text/html')) {
+          return caches.match('/index.html') || caches.match('index.html') || caches.match('/');
         }
       });
     })
