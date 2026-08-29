@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const PORT = process.env.PORT || 8756;
-const ROOT = path.join(__dirname, 'prototype');
+const ROOT = __dirname;
 
 const MIME_TYPES = {
   '.html': 'text/html; charset=UTF-8',
@@ -22,13 +22,6 @@ const server = http.createServer((req, res) => {
   if (reqUrl === '/') reqUrl = '/index.html';
 
   let filePath = path.join(ROOT, reqUrl);
-
-  if (!fs.existsSync(filePath)) {
-    filePath = path.join(__dirname, 'public', reqUrl);
-  }
-  if (!fs.existsSync(filePath)) {
-    filePath = path.join(__dirname, reqUrl);
-  }
 
   fs.stat(filePath, (err, stats) => {
     if (err || !stats.isFile()) {
