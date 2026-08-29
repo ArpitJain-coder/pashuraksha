@@ -1847,6 +1847,7 @@ function buildPanel(){
         }
         setRole(id.startsWith('v-') ? 'vet' : id.startsWith('o-') ? 'officer' : 'farmer', true);
         root(id);
+        closeMobPanel();
       });
       c.appendChild(b);
     });
@@ -1855,11 +1856,14 @@ function buildPanel(){
 function setRole(r, quiet){
   S.role = r;
   document.querySelectorAll('.role button').forEach(b => b.classList.toggle('on', b.dataset.role === r));
-  $('#devnote').textContent = {
-    farmer:'Farmer · Arpit Kale, six animals in Wadgaon. One case is already open — this is a farm mid-season, not a fresh install.',
-    vet:'Veterinarian · Dr. Deshmukh covers eleven villages. The queue is sorted by how serious a case is, not by who called first.',
-    officer:'District officer · Dr. Kulkarni. Every screen here stops at the village. Nothing resolves an individual farm.'
-  }[r];
+  const note = $('#devnote');
+  if(note) {
+    note.textContent = {
+      farmer:'Farmer · Arpit Kale, six animals in Wadgaon. One case is already open — this is a farm mid-season, not a fresh install.',
+      vet:'Veterinarian · Dr. Deshmukh covers eleven villages. The queue is sorted by how serious a case is, not by who called first.',
+      officer:'District officer · Dr. Kulkarni. Every screen here stops at the village. Nothing resolves an individual farm.'
+    }[r];
+  }
   if(!quiet) root(defaultRoot());
 }
 document.querySelectorAll('.role button').forEach(b =>
@@ -1892,5 +1896,22 @@ $('#tog-rm').addEventListener('click', ()=>{
 if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
   S.reduced = true; document.body.classList.add('rm'); $('#tog-rm').classList.add('on');
 }
+
+function openMobPanel(){
+  const p = $('#panel'); const s = $('#panel-scrim');
+  if(p) p.classList.add('open');
+  if(s) s.classList.add('show');
+}
+function closeMobPanel(){
+  const p = $('#panel'); const s = $('#panel-scrim');
+  if(p) p.classList.remove('open');
+  if(s) s.classList.remove('show');
+}
+const mobBtn = $('#mob-menu-btn');
+if(mobBtn) mobBtn.addEventListener('click', openMobPanel);
+const pClose = $('#panel-close');
+if(pClose) pClose.addEventListener('click', closeMobPanel);
+const pScrim = $('#panel-scrim');
+if(pScrim) pScrim.addEventListener('click', closeMobPanel);
 
 buildPanel(); syncPanel(); setRole('farmer', true); root('f-splash');

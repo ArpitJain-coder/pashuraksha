@@ -17,8 +17,11 @@
 <body>
 <div class="stage">
 
-  <aside class="panel">
-    <h1>PashuSetu</h1>
+  <aside class="panel" id="panel">
+    <div class="panel-header" style="display:flex;align-items:center;justify-content:space-between">
+      <h1>PashuSetu</h1>
+      <button class="panel-close-btn" id="panel-close" aria-label="Close menu">&times;</button>
+    </div>
     <div class="sub">Livestock health early-warning &amp; veterinary triage · SIH 2026 · PS 26128</div>
 
     <div class="grp">
@@ -42,17 +45,31 @@
     </div>
   </aside>
 
+  <div class="panel-scrim" id="panel-scrim"></div>
+
   <main class="devwrap">
-    <div class="devhead">
+    <div class="mob-bar" id="mob-bar">
+      <button class="mob-menu-btn" id="mob-menu-btn" aria-label="Open menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        <span>Menu</span>
+      </button>
+      <div class="role">
+        <button data-role="farmer" class="on">Farmer</button>
+        <button data-role="vet">Vet</button>
+        <button data-role="officer">Officer</button>
+      </div>
+    </div>
+
+    <div class="devhead desktop-only">
       <div class="role">
         <button data-role="farmer" class="on">Farmer</button>
         <button data-role="vet">Veterinarian</button>
         <button data-role="officer">District officer</button>
       </div>
     </div>
-    <div class="devnote" id="devnote">Tap through the app. Use the left panel to jump to any screen or toggle offline, language and reduced motion.</div>
+    <div class="devnote desktop-only" id="devnote">Tap through the app. Use the left panel to jump to any screen or toggle offline, language and reduced motion.</div>
 
-    <div class="device" style="margin-top:16px">
+    <div class="device" id="device">
       <div class="notch"></div>
       <div class="statusbar" id="sb">
         <span class="tabnum">9:41</span>
