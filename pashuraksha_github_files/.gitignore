@@ -1,0 +1,13 @@
+# System files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Archives & Temporary Download Folders
+*.zip
+drive-download-*
+
+# Vercel & Node
+.vercel
+node_modules
+*.log
