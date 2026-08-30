@@ -11,3 +11,10 @@ drive-download-*
 .vercel
 node_modules
 *.log
+
+# Android & Gradle
+.gradle/
+build/
+app/build/
+local.properties
+.idea/caches/

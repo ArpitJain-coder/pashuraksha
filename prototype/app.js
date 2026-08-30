@@ -147,7 +147,7 @@ SC['f-splash'] = () => ({ light:true, chrome:false, html:`
         backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.25);
         display:grid;place-items:center;box-shadow:0 12px 32px rgba(0,0,0,.3);
         animation:pop 700ms var(--ease-flow)">
-        <img src="images/cow_lakshmi.png" style="width:84px;height:84px;border-radius:22px;object-fit:cover" alt="PashuSetu">
+        <img src="images/logo.png" style="width:88px;height:88px;border-radius:50%;object-fit:cover;background:#fff;padding:2px" alt="PashuSetu Logo">
       </div>
       <div style="font-size:38px;font-weight:700;letter-spacing:-.035em;margin-top:20px;text-shadow:0 2px 8px rgba(0,0,0,.3)">PashuSetu</div>
       <div style="font-size:15px;color:rgba(255,255,255,.88);margin-top:8px;line-height:1.55;max-width:280px;font-weight:500">
